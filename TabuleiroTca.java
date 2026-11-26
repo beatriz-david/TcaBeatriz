@@ -1,0 +1,45 @@
+public class TabuleiroTca {
+
+   public static  int [][] regras = { 
+                        /*0*/{1, 9},
+                        /*1*/{0, 2, 4}, 
+                        /*2*/{1, 14},
+                        /*3*/{4, 10},
+                        /*4*/{1, 3, 5, 7},
+                        /*5*/{4, 13},
+                        /*6*/{7, 11},
+                        /*7*/{4, 6, 8},
+                        /*8*/{7, 12},
+                        /*9*/{0, 10, 21},
+                        /*10*/{3, 9, 11, 18},
+                        /*11*/{6, 10, 15},
+                        /*12*/{8, 13, 17},
+                        /*13*/{5, 12, 14, 20},
+                        /*14*/{2, 13, 23},
+                        /*15*/{11, 16},
+                        /*16*/{15, 17, 19},
+                        /*17*/{12, 16},
+                        /*18*/{10, 19},
+                        /*19*/{16, 18, 20, 22},
+                        /*20*/{13, 19},
+                        /*21*/{9, 22},
+                        /*22*/{19, 21, 23},
+                        /*23*/{14, 22}
+                       };
+    
+    public static boolean possoMover(int origem, int destino, int [][]regras){
+        if (origem<0 || origem>23 || destino<0 || destino>23) {
+            return false;  
+        }
+
+        for (int i = 0; i < regras[origem].length; i++) { //percorre todas as possibilidades de 
+                                                         // mover uma peca na casa origem e ve se o destino é uma das possibilidades
+            if(destino==regras[origem][i]){
+                return true;
+                
+            }
+        }
+       return false;
+    
+}
+}
